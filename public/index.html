@@ -4,15 +4,20 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Raj Sharad Kadam — PHP Developer / Software Engineer</title>
+<meta name="theme-color" content="#202124" />
 <meta name="description" content="Portfolio of Raj Sharad Kadam, PHP Developer / Software Engineer with 4+ years building enterprise web applications in PHP, WordPress, and AWS." />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%236366f1%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 font-family=%22Arial%2C sans-serif%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22>R</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%2300B9FA%22/><text x=%2250%22 y=%2266%22 font-size=%2255%22 font-family=%22Arial%2C sans-serif%22 font-weight=%22700%22 fill=%22%23202124%22 text-anchor=%22middle%22>R</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="base.css" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="bg-aurora" aria-hidden="true"><span></span><span></span><span></span></div>
 <div class="bg-grid" aria-hidden="true"></div>
 
 <header class="site-header" id="top">
@@ -21,6 +26,7 @@
     <nav class="nav" id="nav">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
+      <a href="#ai">AI Workflow</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#achievements">Achievements</a>
@@ -38,29 +44,60 @@
 <main>
 
   <!-- HERO -->
-  <section class="hero container">
-    <h1 class="hero-title">
-      Raj Sharad Kadam
-    </h1>
-    <p class="hero-role">PHP Developer / Software Engineer</p>
-    <p class="hero-sub">
-      Building enterprise web applications in <span class="hl">PHP &amp; MySQL</span> — across
-      <span class="hl">WordPress</span> &amp; OpenCart — with 4+ years delivering
-      large-scale platforms for <span class="hl">BCCL (The Times of India)</span>, now accelerated with
-      AI-assisted development.
-    </p>
-    <div class="hero-actions">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-    </div>
-    <div class="hero-meta">
-      <a href="mailto:rajkadam7045@gmail.com">rajkadam7045@gmail.com</a>
-      <span class="sep">•</span>
-      <a href="tel:+917045563425">+91 70455 63425</a>
-      <span class="sep">•</span>
-      <span>Mumbai, India</span>
+  <section class="hero-wrap" id="hero">
+    <canvas id="neural" aria-hidden="true"></canvas>
+    <div class="container hero">
+      <div class="hero-copy">
+        <div class="hero-badge"><span class="pulse-dot"></span>AI-Assisted Engineering</div>
+        <h1 class="hero-title">Raj Sharad Kadam</h1>
+        <p class="hero-role">PHP Developer / Software Engineer</p>
+        <p class="hero-typed"><span class="hero-typed-label">Focus</span><span id="typed">Enterprise PHP &amp; WordPress platforms</span><span class="caret" aria-hidden="true"></span></p>
+        <p class="hero-sub">
+          Building enterprise web applications in <span class="hl">PHP &amp; MySQL</span> — across
+          <span class="hl">WordPress</span> &amp; OpenCart — with 4+ years delivering
+          large-scale platforms for <span class="hl">BCCL (The Times of India)</span>, now accelerated with
+          AI-assisted development.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+        <div class="hero-meta">
+          <a href="mailto:rajkadam7045@gmail.com">rajkadam7045@gmail.com</a>
+          <span class="sep">•</span>
+          <a href="tel:+917045563425">+91 70455 63425</a>
+          <span class="sep">•</span>
+          <span>Mumbai, India</span>
+        </div>
+      </div>
+
+      <aside class="console" aria-label="AI-assisted delivery pipeline">
+        <div class="console-bar">
+          <span class="console-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="console-title">ai-assisted-delivery</span>
+        </div>
+        <ol class="console-lines">
+          <li style="--d:0"><span class="prompt">$</span> prompt --task "multi-event platform"</li>
+          <li style="--d:1"><span class="ok">✓</span> requirements → structured prompts</li>
+          <li style="--d:2"><span class="ok">✓</span> React + WordPress REST scaffold</li>
+          <li style="--d:3"><span class="ok">✓</span> human review · security · performance</li>
+          <li style="--d:4"><span class="ok">✓</span> deploy → production support</li>
+          <li style="--d:5" class="console-idle"><span class="prompt">$</span><span class="caret" aria-hidden="true"></span></li>
+        </ol>
+      </aside>
     </div>
   </section>
+
+  <div class="marquee" aria-label="Technologies and tools">
+    <div class="marquee-track">
+      <ul>
+        <li>PHP</li><li>MySQL</li><li>WordPress Multisite</li><li>React</li><li>REST APIs</li><li>Elementor</li><li>ACF</li><li>Gravity Forms</li><li>Java</li><li>Spring</li><li>JBoss EAP</li><li>Nginx</li><li>PHP-FPM</li><li>Chart.js</li><li>AI-Assisted Development</li><li>Prompt Engineering</li>
+      </ul>
+      <ul aria-hidden="true">
+        <li>PHP</li><li>MySQL</li><li>WordPress Multisite</li><li>React</li><li>REST APIs</li><li>Elementor</li><li>ACF</li><li>Gravity Forms</li><li>Java</li><li>Spring</li><li>JBoss EAP</li><li>Nginx</li><li>PHP-FPM</li><li>Chart.js</li><li>AI-Assisted Development</li><li>Prompt Engineering</li>
+      </ul>
+    </div>
+  </div>
 
   <!-- ABOUT -->
   <section id="about" class="section container">
@@ -78,19 +115,19 @@
     </p>
     <div class="stat-row">
       <div class="stat">
-        <span class="stat-num">4+</span>
+        <span class="stat-num" data-count="4" data-suffix="+">4+</span>
         <span class="stat-label">Years Experience</span>
       </div>
       <div class="stat">
-        <span class="stat-num">9</span>
+        <span class="stat-num" data-count="9">9</span>
         <span class="stat-label">Key Projects Delivered</span>
       </div>
       <div class="stat">
-        <span class="stat-num">2</span>
+        <span class="stat-num" data-count="2">2</span>
         <span class="stat-label">CMS Platforms</span>
       </div>
       <div class="stat">
-        <span class="stat-num">2</span>
+        <span class="stat-num" data-count="2">2</span>
         <span class="stat-label">DR Site Migrations Led</span>
       </div>
     </div>
@@ -152,9 +189,33 @@
     </div>
   </section>
 
+  <!-- AI WORKFLOW -->
+  <section id="ai" class="section container">
+    <p class="eyebrow">03 — AI Workflow</p>
+    <h2 class="section-title">Engineering with AI, end to end</h2>
+    <p class="section-sub">How I use AI across the development lifecycle — faster delivery, with human review, security and performance built in.</p>
+
+    <ol class="flow">
+      <li class="flow-step"><span class="flow-num">01</span><h3>Define</h3><p>Turn requirements into clear, structured prompts and acceptance criteria.</p></li>
+      <li class="flow-step"><span class="flow-num">02</span><h3>Generate</h3><p>AI-assisted PHP, JavaScript and Elementor code, plus first-draft UI.</p></li>
+      <li class="flow-step"><span class="flow-num">03</span><h3>Review</h3><p>Every change reviewed by hand for logic, security and standards.</p></li>
+      <li class="flow-step"><span class="flow-num">04</span><h3>Optimise</h3><p>AI-guided query, code and performance tuning for enterprise scale.</p></li>
+      <li class="flow-step"><span class="flow-num">05</span><h3>Ship</h3><p>Deploy, monitor and support in production.</p></li>
+    </ol>
+
+    <div class="ai-caps">
+      <div class="ai-cap"><h3>AI-Assisted Development</h3><p>Accelerating PHP, JavaScript and Elementor builds across enterprise platforms.</p></div>
+      <div class="ai-cap"><h3>Prompt Engineering</h3><p>Structured prompts that turn requirements into reliable, reviewable output.</p></div>
+      <div class="ai-cap"><h3>AI-Powered UI Generation</h3><p>Responsive layouts and components drafted with AI, then refined by hand.</p></div>
+      <div class="ai-cap"><h3>AI-Enabled Content Workflows</h3><p>Faster content and page production for engagement and editorial portals.</p></div>
+      <div class="ai-cap"><h3>AI-Based Code Optimization</h3><p>Performance and security tuning guided by AI-assisted review.</p></div>
+      <div class="ai-cap"><h3>Conversational Assistants</h3><p>Built the HR Policy Assistant — manage and query policies by chat.</p></div>
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section id="experience" class="section container">
-    <p class="eyebrow">03 — Experience</p>
+    <p class="eyebrow">04 — Experience</p>
     <h2 class="section-title">Work History</h2>
     <div class="timeline">
       <div class="timeline-item">
@@ -194,7 +255,7 @@
 
   <!-- PROJECTS -->
   <section id="projects" class="section container">
-    <p class="eyebrow">04 — Projects</p>
+    <p class="eyebrow">05 — Projects</p>
     <h2 class="section-title">Key Projects</h2>
     <p class="section-sub">Selected work delivered for BCCL (The Times of India) and related platforms.</p>
     <div class="project-grid">
@@ -264,7 +325,7 @@
 
   <!-- ACHIEVEMENTS -->
   <section id="achievements" class="section container">
-    <p class="eyebrow">05 — Achievements</p>
+    <p class="eyebrow">06 — Achievements</p>
     <h2 class="section-title">Key Achievements</h2>
     <div class="achieve-list">
       <div class="achieve-item">
@@ -298,7 +359,7 @@
   <section id="education" class="section container">
     <div class="edu-lang-grid">
       <div>
-        <p class="eyebrow">06 — Education</p>
+        <p class="eyebrow">07 — Education</p>
         <h2 class="section-title">Education</h2>
         <div class="edu-item">
           <h3>B.Sc. (Information Technology)</h3>
@@ -317,7 +378,7 @@
         </div>
       </div>
       <div>
-        <p class="eyebrow">07 — Languages</p>
+        <p class="eyebrow">08 — Languages</p>
         <h2 class="section-title">Languages</h2>
         <div class="lang-list">
           <div class="lang-item"><span>Marathi</span><span class="muted">Native</span></div>
@@ -331,7 +392,7 @@
   <!-- CONTACT -->
   <section id="contact" class="section container">
     <div class="contact-box">
-      <p class="eyebrow">08 — Contact</p>
+      <p class="eyebrow">09 — Contact</p>
       <h2 class="section-title">Let's build something enterprise-grade.</h2>
       <p class="section-sub">Open to PHP development, WordPress engineering, and CMS-driven web application roles.</p>
       <div class="contact-links">
